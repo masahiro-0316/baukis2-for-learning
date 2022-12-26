@@ -1,4 +1,4 @@
-class Staff::TopController < ApplicationController
+class Stass::TopController < Staff::Base
   def index
     render action: "index"
   end
