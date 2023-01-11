@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_065253) do
   create_table "administrators", force: :cascade do |t|
     t.string "email", null: false
     t.string "hashed_password"
-    t.boolean "snapended", default: false, null: false
+    t.boolean "suspended", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index "lower((email)::text)", name: "index_administrators_on_LOWER_email", unique: true
