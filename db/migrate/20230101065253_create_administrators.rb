@@ -3,7 +3,7 @@ class CreateAdministrators < ActiveRecord::Migration[6.0]
     create_table :administrators do |t|
       t.string :email, null: false 
       t.string :hashed_password
-      t.boolean :snapended, null: false, default: false
+      t.boolean :suspended, null: false, default: false #無効化フラグ
 
       t.timestamps
     end
