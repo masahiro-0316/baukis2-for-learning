@@ -25,7 +25,7 @@ Things you may want to cover:
 =======
 # baukis2
 
-Rails学習
+[Rails学習](https://github.com/kuroda/baukis2)
 
 ## Getting started
 
