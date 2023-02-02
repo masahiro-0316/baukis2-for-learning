@@ -23,7 +23,7 @@ describe "管理者による職員管理" do
 
     example "suspended プラグをセットする" do
       params_hash.merge!(suspended: true)
-      patch admin_staff_members_url(staff_member),
+      patch admin_staff_member_url(staff_member),
         params: { staff_member: params_hash }
       staff_member.reload
       expect(staff_member).to be_suspended
