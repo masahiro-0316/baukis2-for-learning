@@ -1,5 +1,4 @@
 class Admin::StaffMembersController < Admin::Base
-  before_action :authorize
 
   def index
     @staff_members = StaffMember.order(:family_name, :given_name)
@@ -36,13 +35,6 @@ class Admin::StaffMembersController < Admin::Base
       redirect_to :admin_staff_members
     else
       render action: "edit"
-    end
-  end
-
-  private def authorize
-    unless current_administrator
-      flash.alert = "管理者としてログインしてください"
-      redirect_to :admin_login
     end
   end
 
