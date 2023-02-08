@@ -10,7 +10,7 @@ class Admin::StaffMembersController < Admin::Base
   end
 
   def new
-    @staff_member =  StaffMember.new
+    @staff_member = StaffMember.new
   end
 
   def edit
@@ -48,7 +48,7 @@ class Admin::StaffMembersController < Admin::Base
 
   def destroy
     staff_member = StaffMember.find(params[:id])
-    staff_member.destroy
+    staff_member.destroy!
     flash.notice = "職員アカウントを削除しました。"
     redirect_to :admin_staff_members
   end
