@@ -1,5 +1,5 @@
 class StaffMember < ApplicationRecord
-  has_many :staff_events, dependent: :destroy
+  has_many :events, class_name: "StaffEvent", dependent: :destroy
 
   def password=(raw_password)
     if raw_password.kind_of?(String)
@@ -10,7 +10,7 @@ class StaffMember < ApplicationRecord
   end
 
   def active?
-    !suspended? && start_date <= Date.today &&
+    !suspended && start_date <= Date.today &&
       (end_date.nil? || end_date > Date.today)
   end
 end

@@ -10,7 +10,7 @@ class StaffEvent < ApplicationRecord
     rejected: "ログイン拒否"
   }
 
-  def description 
+  def description
     DESCRIPTIONS[type.to_sym]
   end
 end
