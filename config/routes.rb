@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get "login" => "sessions#new", as: :login
       resource :session, only: [ :create, :destroy ]
       resource :account, except: [ :new, :create, :destroy]
+      resource :password, only: [ :show, :edot, :update]
     end
   end
 
