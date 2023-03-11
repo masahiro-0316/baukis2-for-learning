@@ -1,5 +1,5 @@
 class Staff::CustomerForm
-  include ActiveModel::Module
+  include ActiveModel::Model
   
   attr_accessor :customer
   delegate :persisted?, to: :customer
@@ -10,3 +10,4 @@ class Staff::CustomerForm
     @customer.build_home_address unless @customer.home_address
     @customer.build_work_address unless @customer.work_address
   end
+end
