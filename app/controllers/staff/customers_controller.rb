@@ -7,4 +7,12 @@ class Staff::CustomersController < Staff::Base
   def show
     @customers = Customer.find(params[:id])
   end
+
+  def new
+    @customer_form = Staff::CustomerForm.new
+  end
+
+  def edit
+    @customer_form = Staff::CustomerFOrm.new(Customer.find(params[:id]))
+  end
 end
