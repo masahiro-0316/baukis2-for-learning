@@ -10,4 +10,3 @@ class Staff::CustomerForm
     @customer.build_home_address unless @customer.home_address
     @customer.build_work_address unless @customer.work_address
   end
-end
