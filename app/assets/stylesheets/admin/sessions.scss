@@ -5,14 +5,14 @@ div#wrapper {
   div#container {
     div#login-form {
       width: 400px;
-      margin: $wide *2 auto;
+      margin: $wide * 2 auto;
       padding: $wide * 2;
       border-radius: $wide;
       border: solid 4px $dark_magenta;
       background-color: $very_light_gray;
 
       h1 {
-        background-color:  transparent;
+        background-color: transparent;
         color: $very_dark_magenta;
         font-size: $huge;
         font-weight: bold;
@@ -21,7 +21,7 @@ div#wrapper {
       form {
         div {
           padding: $wide;
-          lable {
+          label {
             display: block;
             padding: $moderate 0;
           }
@@ -29,7 +29,7 @@ div#wrapper {
             padding: $wide;
             width: 400px - $wide * 4;
           }
-          imput[tyoe="submit"] {
+          input[type="submit"] {
             padding: $wide $wide * 2;
           }
         }
