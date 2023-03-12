@@ -1,10 +1,10 @@
-<% title = "アカウント管理" %>
+<% @title = "アカウント管理" %>
 <h1><%= @title %></h1>
 
 <div class="table-wrapper">
   <div class="links">
     <%= link_to "アカウント情報編集", :edit_staff_account %> |
-    <%= link_to "パスワード変更", :edit_staff_password %>
+    <%= link_to "パスワード編集", :edit_staff_password %>
   </div>
 
   <table class="attributes">
@@ -37,6 +37,6 @@
       <td class="date">
         <%= @staff_member.start_date.strftime("%Y/%m/%d") %>
       </td>
-    <tr>
+    </tr>
   </table>
 </div>

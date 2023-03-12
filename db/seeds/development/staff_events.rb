@@ -1,7 +1,7 @@
 staff_member = StaffMember.all
 
 256.times do |n|
-  m = staff_member.sample
+  m = staff_members.sample
   e = m.events.build
   if m.active?
     if n.even?

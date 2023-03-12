@@ -19,7 +19,7 @@ given_names = %w{
   二郎:ジロウ:jiro
   三郎:サブロウ:saburo
   松子:マツコ:matsuko
-  竹子:タケコ:tateko
+  竹子:タケコ:takeko
   梅子:ウメコ:umeko
 }
 
@@ -34,7 +34,7 @@ given_names = %w{
     family_name_kana: fn[1],
     given_name_kana: gn[1],
     password: "password",
-    start_date: (100 -n).days.ago.to_date,
+    start_date: (100 - n).days.ago.to_date,
     end_date: n == 0 ? Date.today : nil,
     suspended: n == 1
   )

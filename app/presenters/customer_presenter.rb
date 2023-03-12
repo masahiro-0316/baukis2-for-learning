@@ -17,9 +17,9 @@ class CustomerPresenter < ModelPresenter
   def gender
     case object.gender
     when "male"
-      "男"
+      "男性"
     when "female"
-      "女"
+      "女性"
     else
       ""
     end

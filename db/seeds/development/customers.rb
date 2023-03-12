@@ -20,7 +20,7 @@ given_names = %w{
   四郎:シロウ:shiro
   五郎:ゴロウ:goro
   松子:マツコ:matsuko
-  竹子:タケコ:tateko
+  竹子:タケコ:takeko
   梅子:ウメコ:umeko
   鶴子:ツルコ:turuko
   亀子:カメコ:kameko
