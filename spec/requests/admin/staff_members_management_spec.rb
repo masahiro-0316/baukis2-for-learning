@@ -32,7 +32,7 @@ describe "管理者による職員管理" do
     example "セッションタイムアウト" do
       travel_to Admin::Base::TIMEOUT.from_now.advance(seconds: 1)
       get admin_login_url
-      expect(response).to redirect_to(admin_root_url)
+      expect(response).to redirect_to(admin_login_url)
     end
   end 
 
