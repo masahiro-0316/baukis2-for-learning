@@ -6,7 +6,7 @@ class Customer < ApplicationRecord
   has_one :home_address, dependent: :destroy, autosave: true
   has_one :work_address, dependent: :destroy, autosave: true
   has_many :phones, dependent: :destroy
-  has_many :presonal_phones, -> { where(address_id: nil).order(:id) },
+  has_many :personal_phones, -> { where(address_id: nil).order(:id) },
     class_name: "Phone", autosave: true
 
   validates :gender, inclusion: { in: %w(male female), allow_blank: true }
