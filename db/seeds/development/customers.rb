@@ -44,7 +44,7 @@ company_names = %w(OIAX ABC XYZ)
       gender: m < 5 ? "male" : "female"
     )
     if m % 2 == 0
-      c.personal_phones.create!(number: sprintf("090-0000-%04d", n * 10 + m ))
+      c.personal_phones.create!(number: sprintf("090-0000-%04d", n * 10 + m))
     end
     c.create_home_address!(
       postal_code: sprintf("%07d", rand(10000000)),
@@ -54,7 +54,7 @@ company_names = %w(OIAX ABC XYZ)
       address2: "レイルズハイツ 602 号室"
     )
     if m % 10 == 0
-      c.hone_address.phones.create!(number: sprintf("03-0000-%04d", n))
+      c.home_address.phones.create!(number: sprintf("03-0000-%04d", n))
     end
     if m % 3 == 0
       c.create_work_address!(
