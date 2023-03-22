@@ -1,4 +1,4 @@
-staff_member = StaffMember.all
+staff_members = StaffMember.all
 
 256.times do |n|
   m = staff_members.sample
