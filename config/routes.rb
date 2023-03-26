@@ -3,30 +3,30 @@ Rails.application.routes.draw do
 
   constraints host: config[:staff][:host] do
     namespace :staff, path: config[:staff][:path] do
-      root "top#index"
-      get "login" => "sessions#new", as: :login
-      resource :session, only: [ :create, :destroy ]
-      resource :account, except: [ :new, :create, :destroy]
-      resource :password, only: [ :show, :edit, :update]
+      root 'top#index'
+      get 'login' => 'sessions#new', as: :login
+      resource :session, only: %i[create destroy]
+      resource :account, except: %i[new create destroy]
+      resource :password, only: %i[show edit update]
       resources :customers
     end
   end
 
   constraints host: config[:admin][:host] do
     namespace :admin, path: config[:admin][:path] do
-      root "top#index"
-      get "login" => "sessions#new", as: :login
-      resource :session, only: [ :create, :destroy ]
+      root 'top#index'
+      get 'login' => 'sessions#new', as: :login
+      resource :session, only: %i[create destroy]
       resources :staff_members do
         resources :staff_events, only: [:index]
       end
-        resources :staff_events, only: [:index]
+      resources :staff_events, only: [:index]
     end
   end
 
   constraints host: config[:customer][:host] do
     namespace :customer, path: config[:customer][:path] do
-      root "top#index"
+      root 'top#index'
     end
   end
 end

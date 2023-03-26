@@ -1,13 +1,12 @@
 class Admin::StaffMembersController < Admin::Base
-
   def index
-    @staff_members = 
+    @staff_members =
       StaffMember.order(:family_name_kana, :given_name_kana).page(params[:page])
   end
 
   def show
     staff_member = StaffMember.find(params[:id])
-    redirect_to [ :edit, :admin, staff_member ]
+    redirect_to [:edit, :admin, staff_member]
   end
 
   def new
@@ -21,10 +20,10 @@ class Admin::StaffMembersController < Admin::Base
   def create
     @staff_member = StaffMember.new(staff_member_params)
     if @staff_member.save
-      flash.notice = "職員アカウントを新規登録しました。"
+      flash.notice = '職員アカウントを新規登録しました。'
       redirect_to :admin_staff_members
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -32,10 +31,10 @@ class Admin::StaffMembersController < Admin::Base
     @staff_member = StaffMember.find(params[:id])
     @staff_member.assign_attributes(staff_member_params)
     if @staff_member.save
-      flash.notice = "職員アカウントを更新しました。"
+      flash.notice = '職員アカウントを更新しました。'
       redirect_to :admin_staff_members
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
@@ -50,7 +49,7 @@ class Admin::StaffMembersController < Admin::Base
   def destroy
     staff_member = StaffMember.find(params[:id])
     staff_member.destroy!
-    flash.notice = "職員アカウントを削除しました。"
+    flash.notice = '職員アカウントを削除しました。'
     redirect_to :admin_staff_members
   end
 end

@@ -1,12 +1,13 @@
 class Staff::CustomerForm
   include ActiveModel::Model
-  
+
   attr_accessor :customer, :inputs_home_address, :inputs_work_address
+
   delegate :persisted?, :save, to: :customer
-    
+
   def initialize(customer = nil)
     @customer = customer
-    @customer ||= Customer.new(gender: "male")
+    @customer ||= Customer.new(gender: 'male')
     (2 - @customer.personal_phones.size).times do
       @customer.personal_phones.build
     end
@@ -17,15 +18,15 @@ class Staff::CustomerForm
     (2 - @customer.home_address.phones.size).times do
       @customer.home_address.phones.build
     end
-    (2- @customer.work_address.phones.size).times do
+    (2 - @customer.work_address.phones.size).times do
       @customer.work_address.phones.build
     end
   end
 
   def assign_attributes(params = {})
     @params = params
-    self.inputs_home_address = params[:inputs_home_address] == "1"
-    self.inputs_work_address = params[:inputs_work_address] == "1"
+    self.inputs_home_address = params[:inputs_home_address] == '1'
+    self.inputs_work_address = params[:inputs_work_address] == '1'
 
     customer.assign_attributes(customer_params)
     phones = phone_params(:customer).fetch(:phones)
@@ -95,6 +96,6 @@ class Staff::CustomerForm
 
   private def phone_params(record_name)
     @params.require(record_name)
-      .slice(:phones).permit(phones: [ :number, :primary ])
+           .slice(:phones).permit(phones: %i[number primary])
   end
 end

@@ -12,11 +12,11 @@ class Staff::PasswordsController < Staff::Base
     @change_password_form = Staff::ChangePasswordForm.new(staff_member_params)
     @change_password_form.object = current_staff_member
     if @change_password_form.save
-      flash.notice = "パスワードを変更しました。"
+      flash.notice = 'パスワードを変更しました。'
       redirect_to :staff_account
     else
-      flash.now.alert = "入力に誤りがあります。"
-      render action: "edit"
+      flash.now.alert = '入力に誤りがあります。'
+      render action: 'edit'
     end
   end
 
