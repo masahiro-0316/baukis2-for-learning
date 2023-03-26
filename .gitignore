@@ -37,3 +37,6 @@ yarn-debug.log*
 
 # Mac
 .DS_Store
+
+# Rubocop
+.rubocop_todo.yml
